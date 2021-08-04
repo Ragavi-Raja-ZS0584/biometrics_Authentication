@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, Alert } from 'react-native';
 import ReactNativeBiometrics from 'react-native-biometrics';
 
 
@@ -31,11 +31,12 @@ export default function LoginScreen({navigation}) {
             console.log(resultObject);
             const { success, signature } = resultObject
             if (success) {
+                Alert.alert("Loggin Successfull");
                 navigation.navigate('Home');
-
             }
             else{
-                console.log("please re-load and try again");
+                Alert.alert("Time Out please try again");
+
             }
         })
     }
@@ -49,11 +50,11 @@ export default function LoginScreen({navigation}) {
 
     useEffect(() => {
         BiometricAvailabilityCheck();
-        BiometricVerification();
     });
 
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <Button title="fingerprint" onPress={()=>BiometricVerification()}/>
         <Text>Please Login using Biometrics</Text>
       </View>
     )
