@@ -7,9 +7,10 @@ export default function  SplashScreen ({navigation}) {
     const [h_message, seth_message] = useState ("")
     const [s_message, sets_message] = useState ("")
     const [e_message, sete_message] = useState ("")
+    
     const [p_message, setp_message] = useState ("")
 
-    
+     
    
     const getBiometric = async () => {
 
