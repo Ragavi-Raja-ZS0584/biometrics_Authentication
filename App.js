@@ -22,7 +22,7 @@
 
   },
   {
-    initialRouteName: 'Splash',
+    initialRouteName: 'Login',
   }
 );
 export default createAppContainer(App);
